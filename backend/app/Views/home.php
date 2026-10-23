@@ -286,11 +286,12 @@ $products = [
                     <p class="mt-2 text-lg">
                         5:00 PM - 12:00 AM
                     </p>
-
-                    https://maps.app.goo.gl/HBGafXimntBixBEo6
-                    Get Directions
+                    <a
+                        href="https://maps.app.goo.gl/HBGafXimntBixBEo6"
+                        target="_blank"
+                        class="inline-block bg-blue-900 hover:bg-blue-700 mt-6 px-6 py-3 rounded-lg text-white">
+                        Get Directions
                     </a>
-
                 </div>
 
             </div>
