@@ -264,44 +264,6 @@ $products = [
 
     </section>
 
-    <!-- REVIEWS -->
-    <section class="bg-gray-100 py-16">
-
-        <div class="mx-auto px-6 container">
-
-            <h2 class="mb-12 font-bold text-4xl text-center">
-                Customer Reviews
-            </h2>
-
-            <div class="gap-8 grid md:grid-cols-3">
-
-                <div class="bg-white shadow p-6 rounded-xl">
-                    ⭐⭐⭐⭐⭐
-                    <p class="mt-3">
-                        Excellent service and fast delivery.
-                    </p>
-                </div>
-
-                <div class="bg-white shadow p-6 rounded-xl">
-                    ⭐⭐⭐⭐⭐
-                    <p class="mt-3">
-                        Easy online ordering and complete inventory tracking.
-                    </p>
-                </div>
-
-                <div class="bg-white shadow p-6 rounded-xl">
-                    ⭐⭐⭐⭐⭐
-                    <p class="mt-3">
-                        Great selection of wine and beverage products.
-                    </p>
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
     <!-- LOCATION -->
     <section id="contact" class="bg-white py-16">
 
