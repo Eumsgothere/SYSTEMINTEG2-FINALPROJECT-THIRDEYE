@@ -29,38 +29,11 @@ $products = [
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Floe Consumer Goods Trading</title>
+<?= view('components/head', ['title' => 'Floe Trading Goods']) ?>
 
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
+<body>
 
-<body class="bg-gray-100">
-
-    <!-- NAVBAR -->
-    <nav class="bg-blue-900 shadow-lg text-white">
-        <div class="flex justify-between items-center mx-auto px-6 py-4 container">
-
-            <div>
-                <h1 class="font-bold text-2xl">
-                    Floe Consumer Goods Trading
-                </h1>
-                <p class="text-xs">Beyond Water</p>
-            </div>
-
-            <div class="space-x-6">
-                <a href="/" class="hover:text-yellow-300">Home</a>
-                <a href="#" class="hover:text-yellow-300">Products</a>
-                <a href="#" class="hover:text-yellow-300">Contact</a>
-                <a href="#" class="bg-yellow-500 px-4 py-2 rounded-lg">
-                    Login
-                </a>
-            </div>
-
-        </div>
-    </nav>
+    <?= view('components/header') ?>
 
     <!-- HERO -->
     <section class="relative">
@@ -327,29 +300,7 @@ $products = [
     </section>
 
     <!-- FOOTER -->
-    <footer class="bg-gray-900 py-10 text-white">
-
-        <div class="mx-auto text-center container">
-
-            <h3 class="font-bold text-2xl">
-                FLOE CONSUMER GOODS TRADING
-            </h3>
-
-            <p class="mt-2">
-                Beyond Water
-            </p>
-
-            <p class="mt-2">
-                Business Inventory System & E-Commerce Integration
-            </p>
-
-            <p class="mt-4 text-sm">
-                © 2026 All Rights Reserved
-            </p>
-
-        </div>
-
-    </footer>
+    <?= view('components/footer') ?>
 
 </body>
 
