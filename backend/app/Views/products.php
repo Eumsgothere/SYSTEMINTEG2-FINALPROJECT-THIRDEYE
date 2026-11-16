@@ -56,18 +56,64 @@
                                 </h3>
 
                                 <p class="mt-3 font-bold text-blue-900 text-2xl">
-                                    ₱<?= number_format($product['price'], 2) ?>
+                                    ₱<?= number_format((float) $product['price'], 2) ?>
                                 </p>
 
-                                <div class="flex gap-2 mt-4">
-                                    <button class="flex-1 bg-blue-900 hover:bg-blue-800 py-2 rounded-lg text-white">
-                                        Add to Cart
-                                    </button>
+                                <p class="mt-2 font-semibold <?= ((int) $product['stock'] > 0) ? 'text-green-600' : 'text-red-600' ?>">
+                                    Stock:
+                                    <?= (int) $product['stock'] > 0
+                                        ? (int) $product['stock'] . ' available'
+                                        : 'Out of stock' ?>
+                                </p>
 
-                                    <button class="px-4 py-2 border border-blue-900 rounded-lg text-blue-900">
-                                        View
-                                    </button>
-                                </div>
+                                <?php if ((int) $product['stock'] > 0): ?>
+
+                                    <div class="flex gap-2 mt-4">
+                                        <button class="flex-1 bg-blue-900 hover:bg-blue-800 py-2 rounded-lg text-white">
+                                            Add to Cart
+                                        </button>
+
+                                        <button class="px-4 py-2 border border-blue-900 rounded-lg text-blue-900">
+                                            View
+                                        </button>
+                                    </div>
+
+                                <?php else: ?>
+
+                                    <form
+                                        action="<?= base_url('restock-request') ?>"
+                                        method="post"
+                                        class="mt-4">
+
+                                        <?= csrf_field() ?>
+
+                                        <input
+                                            type="hidden"
+                                            name="product_id"
+                                            value="<?= esc($product['id']) ?>">
+
+                                        <input
+                                            type="text"
+                                            name="name"
+                                            placeholder="Your name"
+                                            required
+                                            class="mb-2 px-3 py-2 border rounded-lg w-full">
+
+                                        <input
+                                            type="email"
+                                            name="email"
+                                            placeholder="Your email"
+                                            required
+                                            class="mb-2 px-3 py-2 border rounded-lg w-full">
+
+                                        <button
+                                            type="submit"
+                                            class="bg-red-600 hover:bg-red-700 px-4 py-2 rounded-lg w-full text-white">
+                                            Request Restock
+                                        </button>
+                                    </form>
+
+                                <?php endif; ?>
 
                             </div>
 

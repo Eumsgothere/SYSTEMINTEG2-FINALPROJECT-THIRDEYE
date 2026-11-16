@@ -114,7 +114,55 @@
             </ul>
 
         </div>
+        <!-- Restock Notifications -->
+        <div class="bg-white shadow mt-10 p-6 rounded-xl">
 
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="font-bold text-2xl">
+                    Restock Requests
+                </h2>
+
+                <?php if ($restockCount > 0): ?>
+                    <span class="bg-red-600 px-3 py-1 rounded-full text-white">
+                        <?= $restockCount ?> new
+                    </span>
+                <?php endif; ?>
+            </div>
+
+            <?php if (!empty($restockRequests)): ?>
+
+                <div class="space-y-4">
+                    <?php foreach ($restockRequests as $request): ?>
+                        <div class="bg-red-50 p-4 border-red-600 border-l-4 rounded-lg">
+                            <p class="font-semibold text-gray-800">
+                                Restock requested for:
+                                <?= esc($request['product_name'] ?? 'Unknown product') ?>
+                            </p>
+
+                            <p class="text-gray-600">
+                                Customer: <?= esc($request['name']) ?>
+                            </p>
+
+                            <p class="text-gray-600">
+                                Email: <?= esc($request['email']) ?>
+                            </p>
+
+                            <p class="mt-1 text-gray-400 text-sm">
+                                <?= esc($request['created_at']) ?>
+                            </p>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+
+            <?php else: ?>
+
+                <p class="text-gray-500">
+                    No pending restock requests.
+                </p>
+
+            <?php endif; ?>
+
+        </div>
     </div>
 
     <?= view('components/footer') ?>
