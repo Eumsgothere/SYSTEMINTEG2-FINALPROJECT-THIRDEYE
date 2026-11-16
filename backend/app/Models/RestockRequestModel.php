@@ -12,6 +12,9 @@ class RestockRequestModel extends Model
         'product_id',
         'name',
         'email',
+        'company_name',
+        'quantity',
+        'needed_by',
         'status',
     ];
 

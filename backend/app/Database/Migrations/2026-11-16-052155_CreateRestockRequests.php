@@ -18,6 +18,10 @@ class CreateRestockRequests extends Migration
                 'type'     => 'INT',
                 'unsigned' => true,
             ],
+            'company_name' => [
+                'type'       => 'VARCHAR',
+                'constraint' => 150,
+            ],
             'name' => [
                 'type'       => 'VARCHAR',
                 'constraint' => 100,
@@ -25,6 +29,15 @@ class CreateRestockRequests extends Migration
             'email' => [
                 'type'       => 'VARCHAR',
                 'constraint' => 150,
+            ],
+            'quantity' => [
+                'type'     => 'INT',
+                'unsigned' => true,
+                'default'  => 1,
+            ],
+            'needed_by' => [
+                'type' => 'DATE',
+                'null' => true,
             ],
             'status' => [
                 'type'       => 'VARCHAR',

@@ -4,6 +4,15 @@
 <?= view('components/head', ['title' => 'Products']) ?>
 
 <body>
+    <?php if ($successMessage = session()->getFlashdata('success')): ?>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                alert(<?= json_encode($successMessage) ?>);
+            });
+        </script>
+
+    <?php endif; ?>
 
     <?= view('components/header') ?>
 
@@ -80,38 +89,11 @@
 
                                 <?php else: ?>
 
-                                    <form
-                                        action="<?= base_url('restock-request') ?>"
-                                        method="post"
-                                        class="mt-4">
-
-                                        <?= csrf_field() ?>
-
-                                        <input
-                                            type="hidden"
-                                            name="product_id"
-                                            value="<?= esc($product['id']) ?>">
-
-                                        <input
-                                            type="text"
-                                            name="name"
-                                            placeholder="Your name"
-                                            required
-                                            class="mb-2 px-3 py-2 border rounded-lg w-full">
-
-                                        <input
-                                            type="email"
-                                            name="email"
-                                            placeholder="Your email"
-                                            required
-                                            class="mb-2 px-3 py-2 border rounded-lg w-full">
-
-                                        <button
-                                            type="submit"
-                                            class="bg-red-600 hover:bg-red-700 px-4 py-2 rounded-lg w-full text-white">
-                                            Request Restock
-                                        </button>
-                                    </form>
+                                    <a
+                                        href="<?= base_url('restock-request/' . $product['id']) ?>"
+                                        class="block bg-red-600 hover:bg-red-700 mt-4 px-4 py-2 rounded-lg w-full text-white text-center">
+                                        Request Restock
+                                    </a>
 
                                 <?php endif; ?>
 

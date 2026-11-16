@@ -13,6 +13,7 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/', 'Home::index');
 $routes->get('contact', 'Contact::index');
 $routes->get('products', 'Products::index');
+$routes->get('restock-request/(:num)', 'RestockRequests::form/$1');
 $routes->post('restock-request', 'RestockRequests::store');
 
 // ====================
