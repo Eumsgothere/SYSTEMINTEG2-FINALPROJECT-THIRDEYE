@@ -27,10 +27,43 @@
                 Contact
             </a>
 
-            <a href="/login"
-                class="bg-yellow-500 hover:bg-yellow-400 px-4 py-2 rounded-lg font-semibold text-black transition">
-                Login
-            </a>
+            <?php if (session()->get('logged_in')): ?>
+
+                <?php if (session()->get('role') === 'admin'): ?>
+
+                    <a
+                        href="/admin/dashboard"
+                        class="hover:text-yellow-300 transition">
+                        Admin Dashboard
+                    </a>
+                    <a
+                        href="<?= base_url('/admin/products') ?>"
+                        class="hover:text-yellow-300 transition">
+                        Manage Products
+                    </a>
+
+                <?php endif; ?>
+
+                <a
+                    href="/logout"
+                    class="bg-red-600 hover:bg-red-500 px-4 py-2 rounded-lg font-semibold text-white transition">
+                    Logout
+                </a>
+
+            <?php else: ?>
+
+                <a
+                    href="/signup"
+                    class="hover:bg-yellow-500 px-4 py-2 border-2 border-yellow-500 rounded-lg font-semibold text-yellow-500 hover:text-black transition">
+                    Sign Up
+                </a>
+                <a
+                    href="/login"
+                    class="bg-yellow-500 hover:bg-yellow-400 px-4 py-2 rounded-lg font-semibold text-black transition">
+                    Login
+                </a>
+
+            <?php endif; ?>
 
         </div>
 

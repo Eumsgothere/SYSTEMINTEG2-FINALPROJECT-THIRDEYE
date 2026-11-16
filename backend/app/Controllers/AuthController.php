@@ -35,13 +35,44 @@ class AuthController extends BaseController
             'logged_in' => true,
         ]);
 
-        return redirect()->to('/admin/dashboard');
-    }
+        // ROLE CHECK
+        if ($user['role'] === 'admin') {
+            return redirect()->to('/admin/dashboard');
+        }
 
+        return redirect()->to('/');
+    }
     public function logout()
     {
         session()->destroy();
 
         return redirect()->to('/login');
+    }
+    public function signup()
+    {
+        return view('auth/signup');
+    }
+
+    public function register()
+    {
+        $users = new \App\Models\UserModel();
+
+        $password = $this->request->getPost('password');
+        $confirmPassword = $this->request->getPost('confirm_password');
+
+        if ($password !== $confirmPassword) {
+            return redirect()->back()->with('error', 'Passwords do not match');
+        }
+
+        $users->insert([
+            'first_name' => $this->request->getPost('first_name'),
+            'last_name'  => $this->request->getPost('last_name'),
+            'email'      => $this->request->getPost('email'),
+            'password'   => password_hash($password, PASSWORD_DEFAULT),
+            'role'       => 'customer'
+        ]);
+
+        return redirect()->to('/login')
+            ->with('success', 'Account created successfully.');
     }
 }

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<?= view('components/header') ?>
 
 <head>
     <title>Login</title>
@@ -15,6 +16,12 @@
             <h2 class="mb-6 font-bold text-3xl text-center">
                 Admin Login
             </h2>
+
+            <?php if (session()->getFlashdata('success')): ?>
+                <div class="bg-green-100 mb-4 p-3 rounded text-green-600">
+                    <?= session()->getFlashdata('success') ?>
+                </div>
+            <?php endif; ?>
 
             <?php if (session()->getFlashdata('error')): ?>
                 <div class="bg-red-100 mb-4 p-3 rounded text-red-600">
@@ -53,5 +60,6 @@
     </div>
 
 </body>
+<?= view('components/footer') ?>
 
 </html>
