@@ -8,6 +8,7 @@ class ProductModel extends Model
 {
     protected $table = 'products';
     protected $primaryKey = 'id';
+    protected $returnType = 'array';
 
     protected $allowedFields = [
         'name',
@@ -17,8 +18,4 @@ class ProductModel extends Model
         'stock',
         'image',
     ];
-
-    protected $useTimestamps = false;
-
-    protected $returnType = 'array';
 }
