@@ -4,115 +4,121 @@
 <?= view('components/head', ['title' => 'Products']) ?>
 
 <body>
+    <?php if ($successMessage = session()->getFlashdata('success')): ?>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                alert(<?= json_encode($successMessage) ?>);
+            });
+        </script>
+
+    <?php endif; ?>
 
     <?= view('components/header') ?>
 
     <!-- PAGE HEADER -->
     <section class="bg-blue-900 py-20 text-white">
-
         <div class="mx-auto px-6 text-center container">
-
             <h1 class="font-bold text-5xl">
                 Our Products
             </h1>
-
             <p class="mt-4 text-lg">
                 Browse our selection of wines, liquors, and beverages.
             </p>
-
         </div>
-
     </section>
 
     <!-- SEARCH -->
     <section class="bg-white py-8">
-
         <div class="mx-auto px-6 container">
-
             <input
                 type="text"
                 placeholder="Search Products..."
                 class="shadow-sm px-4 py-3 border rounded-lg w-full">
-
         </div>
-
     </section>
 
     <!-- PRODUCT GRID -->
     <section class="py-16">
-
         <div class="mx-auto px-6 container">
 
             <div class="gap-8 grid md:grid-cols-4">
 
-                <?php
+                <?php if (!empty($products)): ?>
 
-                $products = [
-                    ['Jinro 24', 'Soju', '₱265'],
-                    ['Ichiko', 'Soju', '₱1,050'],
-                    ['Jose Cuervo Reg', 'Tequila', '₱880'],
-                    ['Jose Cuervo Lit', 'Tequila', '₱1,200'],
-                    ['Carlo Rossi', 'Red Wine', '₱360'],
-                    ['Novellino', 'Red Wine', '₱355'],
-                    ['Jack Daniel\'s', 'Whiskey', '₱1,190'],
-                    ['Alfonso Light', 'Brandy', '₱275'],
-                    ['Chamisul', 'Soju', '₱110'],
-                    ['Chum Churum', 'Soju', '₱110'],
-                    ['Mojitos', 'Tequila', '₱320'],
-                    ['Suntory Whiskey', 'Whiskey', '₱1,550']
-                ];
+                    <?php foreach ($products as $product): ?>
+                        <div class="bg-white shadow-lg hover:shadow-2xl rounded-2xl overflow-hidden transition">
 
-                foreach ($products as $product):
-                ?>
+                            <img
+                                src="<?= $product['image'] ?>"
+                                alt="<?= $product['name'] ?>"
+                                class="w-full h-60 object-cover">
 
-                    <div class="bg-white shadow-lg hover:shadow-2xl rounded-2xl overflow-hidden transition">
+                            <div class="p-5">
 
-                        https://via.placeholder.com/400x300 class="w-full h-60 object-cover"
-                        >
+                                <span class="bg-blue-100 px-3 py-1 rounded-full text-blue-900 text-xs">
+                                    <?= $product['category'] ?>
+                                </span>
 
-                        <div class="p-5">
+                                <h3 class="mt-4 font-bold text-xl">
+                                    <?= $product['name'] ?>
+                                </h3>
 
-                            <span class="bg-blue-100 px-3 py-1 rounded-full text-blue-900 text-xs">
-                                <?= $product[1] ?>
-                            </span>
+                                <p class="mt-3 font-bold text-blue-900 text-2xl">
+                                    ₱<?= number_format((float) $product['price'], 2) ?>
+                                </p>
 
-                            <h3 class="mt-4 font-bold text-xl">
-                                <?= $product[0] ?>
-                            </h3>
+                                <p class="mt-2 font-semibold <?= ((int) $product['stock'] > 0) ? 'text-green-600' : 'text-red-600' ?>">
+                                    Stock:
+                                    <?= (int) $product['stock'] > 0
+                                        ? (int) $product['stock'] . ' available'
+                                        : 'Out of stock' ?>
+                                </p>
 
-                            <p class="mt-3 font-bold text-blue-900 text-2xl">
-                                <?= $product[2] ?>
-                            </p>
+                                <?php if ((int) $product['stock'] > 0): ?>
 
-                            <div class="flex gap-2 mt-4">
+                                    <div class="flex gap-2 mt-4">
+                                        <button class="flex-1 bg-blue-900 hover:bg-blue-800 py-2 rounded-lg text-white">
+                                            Add to Cart
+                                        </button>
 
-                                <button class="flex-1 bg-blue-900 hover:bg-blue-800 py-2 rounded-lg text-white">
-                                    Add to Cart
-                                </button>
+                                        <button class="px-4 py-2 border border-blue-900 rounded-lg text-blue-900">
+                                            View
+                                        </button>
+                                    </div>
 
-                                <button class="px-4 py-2 border border-blue-900 rounded-lg text-blue-900">
-                                    View
-                                </button>
+                                <?php else: ?>
+
+                                    <a
+                                        href="<?= base_url('restock-request/' . $product['id']) ?>"
+                                        class="block bg-red-600 hover:bg-red-700 mt-4 px-4 py-2 rounded-lg w-full text-white text-center">
+                                        Request Restock
+                                    </a>
+
+                                <?php endif; ?>
 
                             </div>
 
                         </div>
 
-                    </div>
+                    <?php endforeach; ?>
 
-                <?php endforeach; ?>
+                <?php else: ?>
+
+                    <p class="col-span-4 text-gray-500 text-center">
+                        No products available.
+                    </p>
+
+                <?php endif; ?>
 
             </div>
 
         </div>
-
     </section>
 
     <!-- CTA SECTION -->
     <section class="bg-blue-900 py-20 text-white">
-
         <div class="mx-auto px-6 text-center container">
-
             <h2 class="font-bold text-4xl">
                 Looking for Bulk Orders?
             </h2>
@@ -121,16 +127,14 @@
                 Contact us for wholesale pricing and business partnerships.
             </p>
 
-            /contact
-            Contact Us
+            <a
+                href="<?= base_url('/contact') ?>"
+                class="inline-block bg-white mt-6 px-6 py-3 rounded-lg font-semibold text-blue-900">
+                Contact Us
             </a>
-
         </div>
-
     </section>
-
     <?= view('components/footer') ?>
-
 </body>
 
 </html>
