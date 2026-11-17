@@ -8,13 +8,24 @@
     <img src="./assets/img/nyebe_white.png" alt="Nyebe" width="130" height="100">
   </a>
 <!-- * Title Section -->
-  <h3 align="center">AD - CI4 Template</h3>
+  <h3 align="center">Third-Eye - System Integration 2 Final Project</h3>
 </div>
 
 <!-- * Description Section -->
 <div align="center">
-This repository is a beginner-friendly CodeIgniter 4 template.  
-It helps teams quickly bootstrap backend + frontend projects, with simple sample modules that show how to extend the system.
+This repository contains the final group project made by Third-Eye for the subject System Integration 2.  
+The group developed an online shopping system for a local wine business.
+</div>
+
+</div>
+
+<!-- * Group Members -->
+<div align="center">
+Adison, Justine Lyle S.
+Arabe, Vince Carlos P.
+Capapas, Naomie Feona G.
+Espiritu, Samuel Terrence T.
+Rarang, Hazelle Mae M.
 </div>
 
 <br/>
