@@ -32,8 +32,10 @@
     <section class="bg-white py-8">
         <div class="mx-auto px-6 container">
             <input
+                id="product-search"
                 type="text"
                 placeholder="Search Products..."
+                aria-label="Search products"
                 class="shadow-sm px-4 py-3 border rounded-lg w-full">
         </div>
     </section>
@@ -47,7 +49,7 @@
                 <?php if (!empty($products)): ?>
 
                     <?php foreach ($products as $product): ?>
-                        <div class="bg-white shadow-lg hover:shadow-2xl rounded-2xl overflow-hidden transition">
+                        <div class="bg-white shadow-lg hover:shadow-2xl rounded-2xl overflow-hidden transition product-card">
 
                             <img
                                 src="<?= $product['image'] ?>"
@@ -82,9 +84,11 @@
                                             Add to Cart
                                         </button>
 
-                                        <button class="px-4 py-2 border border-blue-900 rounded-lg text-blue-900">
+                                        <a
+                                            href="<?= base_url('view-products/' . (int) $product['id']) ?>"
+                                            class="px-4 py-2 border border-blue-900 rounded-lg text-blue-900 text-center">
                                             View
-                                        </button>
+                                        </a>
                                     </div>
 
                                 <?php else: ?>
@@ -103,6 +107,10 @@
 
                     <?php endforeach; ?>
 
+                    <p id="no-search-results" class="hidden col-span-4 text-gray-500 text-center">
+                        No products match your search.
+                    </p>
+
                 <?php else: ?>
 
                     <p class="col-span-4 text-gray-500 text-center">
@@ -115,6 +123,27 @@
 
         </div>
     </section>
+
+    <script>
+        const productSearch = document.getElementById('product-search');
+        const productCards = document.querySelectorAll('.product-card');
+        const noSearchResults = document.getElementById('no-search-results');
+
+        productSearch.addEventListener('input', function() {
+            const query = this.value.trim().toLowerCase();
+            let visibleCount = 0;
+
+            productCards.forEach(function(card) {
+                const matches = card.textContent.toLowerCase().includes(query);
+                card.classList.toggle('hidden', !matches);
+                if (matches) visibleCount++;
+            });
+
+            if (noSearchResults) {
+                noSearchResults.classList.toggle('hidden', visibleCount > 0);
+            }
+        });
+    </script>
 
     <!-- CTA SECTION -->
     <section class="bg-blue-900 py-20 text-white">

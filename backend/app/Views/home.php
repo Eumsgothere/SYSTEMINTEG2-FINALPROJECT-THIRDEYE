@@ -55,12 +55,16 @@ $products = [
             </p>
 
             <div class="space-x-4">
-                <button class="bg-yellow-500 hover:bg-yellow-600 px-6 py-3 rounded-lg font-bold">
+                <!-- Put Link Here -->
+                <a href="signup" class="inline-block bg-yellow-500 hover:bg-yellow-600 px-6 py-3 rounded-lg font-bold">
                     Shop Now
-                </button>
+                </a>
 
                 <button class="px-6 py-3 border border-white rounded-lg">
-                    View Pricelist
+                    <!-- Put Link Here for Price List -->
+                    <a href="/">
+                        View Price List
+                    </a>
                 </button>
             </div>
 
@@ -120,7 +124,7 @@ $products = [
             </h2>
 
             <div class="gap-8 grid md:grid-cols-4">
-
+                <!-- Add image to for loop here -->
                 <?php
                 $products = [
                     ["Jinro 24", "₱265"],
