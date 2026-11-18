@@ -17,6 +17,13 @@ $routes->get('restock-request/(:num)', 'RestockRequests::form/$1');
 $routes->get('view-products/(:num)', 'Products::viewprod/$1');
 $routes->post('restock-request', 'RestockRequests::store');
 
+// Cart
+$routes->get('cart', 'Cart::index');
+$routes->post('cart/add/(:num)', 'Cart::add/$1');
+$routes->post('cart/update/(:num)', 'Cart::update/$1');
+$routes->post('cart/remove/(:num)', 'Cart::remove/$1');
+$routes->post('checkout', 'Checkout::index');
+
 // ====================
 // Authentication
 // ====================

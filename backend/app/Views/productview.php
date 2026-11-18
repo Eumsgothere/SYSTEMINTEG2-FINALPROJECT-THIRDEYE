@@ -57,17 +57,19 @@
                         </p>
 
                         <div class="flex sm:flex-row flex-col gap-3 mt-8">
-                            <button
-                                type="button"
-                                data-product-id="<?= (int) $product['id'] ?>"
-                                <?= ((int) $product['stock'] < 1) ? 'disabled' : '' ?>
-                                class="flex-1 bg-blue-900 hover:bg-blue-800 disabled:bg-gray-300 px-5 py-3 rounded-lg font-semibold text-white disabled:text-gray-500 transition">
-                                Add to Cart
-                            </button>
+                            <form action="<?= base_url('cart/add/' . (int) $product['id']) ?>" method="post" class="flex-1">
+                                <?= csrf_field() ?>
+                                <button
+                                    type="submit"
+                                    <?= ((int) $product['stock'] < 1) ? 'disabled' : '' ?>
+                                    class="bg-blue-900 hover:bg-blue-800 disabled:bg-gray-300 px-5 py-3 rounded-lg w-full font-semibold text-white disabled:text-gray-500 transition">
+                                    Add to Cart
+                                </button>
+                            </form>
 
                             <a
                                 href="<?= base_url('restock-request/' . (int) $product['id']) ?>"
-                                class="flex-1 px-5 py-3 border border-red-600 hover:bg-red-50 rounded-lg font-semibold text-red-600 text-center transition">
+                                class="flex-1 hover:bg-red-50 px-5 py-3 border border-red-600 rounded-lg font-semibold text-red-600 text-center transition">
                                 Request Restock
                             </a>
                         </div>
