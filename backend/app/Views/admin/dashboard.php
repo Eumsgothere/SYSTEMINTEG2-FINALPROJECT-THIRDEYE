@@ -57,15 +57,15 @@
         <div class="gap-6 grid md:grid-cols-3">
 
             <a
-                href="<?= base_url('/admin/products') ?>"
+                href="<?= base_url('/admin/suppliers') ?>"
                 class="inline-block bg-blue-900 hover:bg-blue-800 shadow p-6 rounded-xl text-white hover:scale-105 transition transition-all duration-300">
 
                 <h3 class="font-bold text-xl">
-                    Manage Products
+                    Suppliers
                 </h3>
 
                 <p class="mt-2 text-sm">
-                    Add, edit and delete products.
+                    Stock Sent by Suppliers
                 </p>
 
             </a>

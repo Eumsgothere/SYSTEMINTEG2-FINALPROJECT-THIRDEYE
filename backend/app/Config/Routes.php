@@ -53,9 +53,9 @@ $routes->group('admin', ['filter' => 'admin'], static function ($routes) {
     $routes->get('products', 'ProductController::index');
     $routes->get('products/create', 'ProductController::create');
     $routes->post('products/store', 'ProductController::store');
-
+    $routes->post('suppliers/delete/(:num)', 'SupplierController::delete/$1');
     $routes->get('products/edit/(:num)', 'ProductController::edit/$1');
     $routes->post('products/update/(:num)', 'ProductController::update/$1');
-
+    $routes->get('sales', 'AdminController::sales');
     $routes->get('products/delete/(:num)', 'ProductController::delete/$1');
 });

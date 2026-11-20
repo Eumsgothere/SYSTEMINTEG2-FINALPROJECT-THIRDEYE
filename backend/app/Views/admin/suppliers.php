@@ -83,12 +83,19 @@
                                             Edit
                                         </a>
 
-                                        <a
-                                            href="<?= base_url('/admin/suppliers/delete/' . $supplier['id']) ?>"
-                                            onclick="return confirm('Delete supplier?')"
-                                            class="bg-red-600 hover:bg-red-500 px-3 py-1 rounded text-white">
-                                            Delete
-                                        </a>
+                                        <form
+                                            action="<?= base_url('admin/suppliers/delete/' . (int) $supplier['id']) ?>"
+                                            method="post"
+                                            onsubmit="return confirm('Delete this supplier delivery?')">
+
+                                            <?= csrf_field() ?>
+
+                                            <button
+                                                type="submit"
+                                                class="bg-red-600 hover:bg-red-500 px-3 py-1 rounded text-white">
+                                                Delete
+                                            </button>
+                                        </form>
 
                                     </div>
 
