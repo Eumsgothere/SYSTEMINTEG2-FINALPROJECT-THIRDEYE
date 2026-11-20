@@ -6,7 +6,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="bg-gray-100">
+<body class="bg-[#D6C3A2]">
 
     <?= view('components/header') ?>
 
@@ -58,7 +58,7 @@
 
             <a
                 href="<?= base_url('/admin/products') ?>"
-                class="bg-blue-900 hover:bg-blue-800 shadow p-6 rounded-xl text-white transition">
+                class="inline-block bg-blue-900 hover:bg-blue-800 shadow p-6 rounded-xl text-white hover:scale-105 transition transition-all duration-300">
 
                 <h3 class="font-bold text-xl">
                     Manage Products
@@ -72,7 +72,7 @@
 
             <a
                 href="<?= base_url('/admin/inventory') ?>"
-                class="bg-green-600 hover:bg-green-500 shadow p-6 rounded-xl text-white transition">
+                class="inline-block bg-green-600 hover:bg-green-500 shadow p-6 rounded-xl text-white hover:scale-105 transition transition-all duration-300">
 
                 <h3 class="font-bold text-xl">
                     Inventory
@@ -86,7 +86,7 @@
 
             <a
                 href="<?= base_url('/admin/sales') ?>"
-                class="bg-purple-700 hover:bg-purple-600 shadow p-6 rounded-xl text-white transition">
+                class="inline-block bg-purple-700 hover:bg-purple-600 shadow p-6 rounded-xl text-white hover:scale-105 transition transition-all duration-300">
 
                 <h3 class="font-bold text-xl">
                     Sales Reports

@@ -3,13 +3,13 @@
 
 <?= view('components/head', ['title' => esc($product['name']) . ' | Floe Trading Goods']) ?>
 
-<body>
+<body class="bg-[#D6C3A2]">
     <?= view('components/header') ?>
 
     <main class="mx-auto px-6 py-10 container">
         <a
             href="<?= base_url('products') ?>"
-            class="inline-flex items-center gap-2 mb-6 font-medium text-blue-900 hover:text-blue-700">
+            class="inline-block inline-flex items-center gap-2 mb-6 font-medium text-[#af1e1e] hover:text-[#eb2525] hover:scale-110 transition-all duration-300">
             <span aria-hidden="true">&larr;</span>
             Back to Products
         </a>
@@ -24,7 +24,7 @@
                 </div>
 
                 <div class="flex flex-col justify-center">
-                    <p class="font-semibold text-blue-900 text-sm uppercase tracking-[0.2em]">
+                    <p class="font-semibold text-[#2b2620] text-sm uppercase tracking-[0.2em]">
                         Product Details
                     </p>
 
@@ -38,7 +38,7 @@
 
                     <div class="mt-8 pt-6 border-gray-200 border-t">
                         <p class="text-gray-500 text-sm">Price</p>
-                        <p class="mt-1 font-bold text-blue-900 text-3xl">
+                        <p class="mt-1 font-bold text-[#2b2620] text-3xl">
                             &#8369;<?= number_format((float) $product['price'], 2) ?>
                         </p>
                     </div>
@@ -62,14 +62,14 @@
                                 <button
                                     type="submit"
                                     <?= ((int) $product['stock'] < 1) ? 'disabled' : '' ?>
-                                    class="bg-blue-900 hover:bg-blue-800 disabled:bg-gray-300 px-5 py-3 rounded-lg w-full font-semibold text-white disabled:text-gray-500 transition">
+                                    class="inline-block bg-[#2b2620] hover:bg-[#423931] disabled:bg-gray-300 px-5 py-3 rounded-lg w-full font-semibold text-white disabled:text-gray-500 hover:scale-105 transition transition-all duration-300">
                                     Add to Cart
                                 </button>
                             </form>
 
                             <a
                                 href="<?= base_url('restock-request/' . (int) $product['id']) ?>"
-                                class="flex-1 hover:bg-red-50 px-5 py-3 border border-red-600 rounded-lg font-semibold text-red-600 text-center transition">
+                                class="inline-block flex-1 hover:bg-red-50 px-5 py-3 border border-red-600 rounded-lg font-semibold text-red-600 text-center hover:scale-105 transition transition-all duration-300">
                                 Request Restock
                             </a>
                         </div>
