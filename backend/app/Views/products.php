@@ -70,17 +70,24 @@
                                     ₱<?= number_format((float) $product['price'], 2) ?>
                                 </p>
 
-                                <p class="mt-2 font-semibold <?= ((int) $product['stock'] > 0) ? 'text-green-600' : 'text-red-600' ?>">
-                                    Stock:
-                                    <?= (int) $product['stock'] > 0
-                                        ? (int) $product['stock'] . ' available'
-                                        : 'Out of stock' ?>
-                                </p>
+                                <div class="mt-3">
+                                    <?php if ((int)$product['stock'] > 0): ?>
+                                        <span class="bg-green-100 px-3 py-1 rounded-full font-semibold text-green-700 text-sm">
+                                            ✅ <?= $product['stock'] ?> in stock
+                                        </span>
+                                    <?php else: ?>
+                                        <span class="bg-red-100 px-3 py-1 rounded-full font-semibold text-red-700 text-sm">
+                                            ❌ Out of Stock
+                                        </span>
+                                    <?php endif; ?>
+                                </div>
 
-                                <?php if ((int) $product['stock'] > 0): ?>
+                                <?php if ((int)$product['stock'] > 0): ?>
 
-                                    <div class="flex gap-2 mt-4">
-                                        <form action="<?= base_url('cart/add/' . (int) $product['id']) ?>" method="post" class="flex-1">
+                                    <div class="mt-4">
+
+                                        <form action="<?= base_url('cart/add/' . (int)$product['id']) ?>" method="post">
+
                                             <?= csrf_field() ?>
                                             <button
                                                 type="submit"
@@ -128,47 +135,6 @@
 
         </div>
     </section>
-
-    <script>
-        const productSearch = document.getElementById('product-search');
-        const productCards = document.querySelectorAll('.product-card');
-        const noSearchResults = document.getElementById('no-search-results');
-
-        productSearch.addEventListener('input', function() {
-            const query = this.value.trim().toLowerCase();
-            let visibleCount = 0;
-
-            productCards.forEach(function(card) {
-                const matches = card.textContent.toLowerCase().includes(query);
-                card.classList.toggle('hidden', !matches);
-                if (matches) visibleCount++;
-            });
-
-            if (noSearchResults) {
-                noSearchResults.classList.toggle('hidden', visibleCount > 0);
-            }
-        });
-    </script>
-
-    <!-- CTA SECTION -->
-    <section class="bg-[#af1e1e] py-20 text-white">
-        <div class="mx-auto px-6 text-center container">
-            <h2 class="font-bold text-4xl">
-                Looking for Bulk Orders?
-            </h2>
-
-            <p class="mt-4 text-lg">
-                Contact us for wholesale pricing and business partnerships.
-            </p>
-
-            <a
-                href="<?= base_url('/contact') ?>"
-                class="inline-block inline-block bg-white mt-6 px-6 py-3 rounded-lg font-semibold text-[#af1e1e] hover:scale-110 transition-all duration-300">
-                Contact Us
-            </a>
-        </div>
-    </section>
-
     <style>
         .product-banner {
             /* Top is clear (0% to 50%), fading to solid color at the bottom (100%) */
@@ -182,6 +148,27 @@
             height: 300px;
         }
     </style>
+    <script>
+        function increaseQty(id, stock) {
+            const input = document.getElementById('qty-' + id);
+
+            let value = parseInt(input.value) || 1;
+
+            if (value < stock) {
+                input.value = value + 1;
+            }
+        }
+
+        function decreaseQty(id) {
+            const input = document.getElementById('qty-' + id);
+
+            let value = parseInt(input.value) || 1;
+
+            if (value > 1) {
+                input.value = value - 1;
+            }
+        }
+    </script>
 
     <?= view('components/footer') ?>
 </body>

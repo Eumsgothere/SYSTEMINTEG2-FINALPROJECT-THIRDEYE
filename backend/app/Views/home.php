@@ -1,31 +1,3 @@
-<?php
-
-$products = [
-    [
-        'name' => 'Jinro 24',
-        'category' => 'Soju',
-        'price' => '₱265'
-    ],
-    [
-        'name' => 'Carlo Rossi',
-        'category' => 'Red Wine',
-        'price' => '₱360'
-    ],
-    [
-        'name' => 'Jose Cuervo Lit',
-        'category' => 'Tequila',
-        'price' => '₱1200'
-    ],
-    [
-        'name' => 'Jack Daniel Reg',
-        'category' => 'Brandy/Whiskey',
-        'price' => '₱1190'
-    ]
-];
-
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -62,7 +34,7 @@ $products = [
 
                 <button class="inline-block px-6 py-3 border border-white rounded-lg hover:scale-110 transition-all duration-300">
                     <!-- Put Link Here for Price List -->
-                    <a href="/">
+                    <a href="/products">
                         View Price List
                     </a>
                 </button>
@@ -124,40 +96,44 @@ $products = [
             </h2>
 
             <div class="gap-8 grid md:grid-cols-4">
-                <!-- Add image to for loop here -->
-                <?php
-                $products = [
-                    ["Jinro 24", "₱265"],
-                    ["Ichiko", "₱1,050"],
-                    ["Jose Cuervo Reg", "₱880"],
-                    ["Jose Cuervo Lit", "₱1,200"],
-                    ["Carlo Rossi", "₱360"],
-                    ["Novellino", "₱355"],
-                    ["Jack Daniel's", "₱1,190"],
-                    ["Alfonso Light", "₱275"]
-                ];
 
-                foreach ($products as $product):
-                ?>
+                <?php foreach ($products as $product): ?>
 
                     <div class="bg-white shadow-lg hover:shadow-2xl p-3 rounded-xl text-center hover:scale-105 transition hover:-translate-y-2 duration-300 ease-in-out cursor-pointer">
 
-                        https://images.unsplash.com/photo-1584916201218-f4242ceb4809?w=600 >
+                        <img
+                            src="<?= !empty($product['image']) ? $product['image'] : 'https://via.placeholder.com/600x400' ?>"
+                            alt="<?= $product['name'] ?>"
+                            class="rounded-lg w-full h-48 object-cover">
 
                         <div class="p-5">
 
-                            <h3 class="font-bold text-xl">
-                                <?= $product[0] ?>
+                            <span class="inline-block bg-blue-100 px-3 py-1 rounded-full text-blue-900 text-xs">
+                                <?= $product['category'] ?>
+                            </span>
+
+                            <h3 class="mt-4 font-bold text-xl">
+                                <?= $product['name'] ?>
                             </h3>
 
                             <p class="mt-4 font-bold text-[#af1e1e] text-2xl">
-                                <?= $product[1] ?>
+                                ₱<?= number_format($product['price'], 2) ?>
                             </p>
 
-                            <button
-                                class="bg-[#af1e1e] hover:bg-[#eb2525] mt-4 py-2 rounded-lg w-full text-white">
-                                Add To Cart
-                            </button>
+                            <form
+                                action="<?= base_url('cart/add/' . (int) $product['id']) ?>"
+                                method="post"
+                                class="mt-4">
+
+                                <?= csrf_field() ?>
+
+                                <button
+                                    type="submit"
+                                    class="bg-[#af1e1e] hover:bg-[#eb2525] py-2 rounded-lg w-full text-white">
+                                    🛒 Add To Cart
+                                </button>
+
+                            </form>
 
                         </div>
 
@@ -463,7 +439,7 @@ $products = [
 
     <!-- FOOTER -->
     <?= view('components/footer') ?>
-
+</body>
 </body>
 
 </html>
