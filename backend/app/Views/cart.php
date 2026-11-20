@@ -17,7 +17,7 @@
 
             <a
                 href="<?= base_url('products') ?>"
-                class="font-medium text-blue-900 hover:text-blue-700">
+                class="inline-block font-medium text-[#af1e1e] hover:scale-110 transition-all duration-300">
                 Continue Shopping
             </a>
         </div>
@@ -40,14 +40,14 @@
                 <p class="mt-2 text-gray-500">Add a product to see it here.</p>
                 <a
                     href="<?= base_url('products') ?>"
-                    class="inline-block bg-blue-900 hover:bg-blue-800 mt-6 px-5 py-3 rounded-lg font-semibold text-white transition">
+                    class="inline-block inline-block bg-[#af1e1e] hover:bg-[#eb2525] mt-6 px-5 py-3 rounded-lg font-semibold text-white hover:scale-110 transition transition-all duration-300">
                     Browse Products
                 </a>
             </section>
         <?php else: ?>
             <div class="gap-8 grid lg:grid-cols-[1fr_320px]">
                 <section class="space-y-4">
-                    <div class="hidden md:grid grid-cols-[minmax(0,1fr)_120px_150px_100px] gap-4 bg-white px-6 py-4 border border-gray-200 rounded-xl font-semibold text-gray-500 text-sm">
+                    <div class="hidden gap-4 md:grid grid-cols-[minmax(0,1fr)_120px_150px_100px] bg-white px-6 py-4 border border-gray-200 rounded-xl font-semibold text-gray-500 text-sm">
                         <span>Product</span>
                         <span>Unit Price</span>
                         <span>Quantity</span>
@@ -97,7 +97,7 @@
                                             value="-1"
                                             <?= $item['quantity'] <= 1 ? 'disabled' : '' ?>
                                             aria-label="Decrease quantity"
-                                            class="disabled:opacity-40 px-3 py-1.5 text-gray-700 hover:bg-gray-100 transition">
+                                            class="hover:bg-gray-100 disabled:opacity-40 px-3 py-1.5 text-gray-700 transition">
                                             &minus;
                                         </button>
                                         <span class="px-4 py-1.5 border-gray-300 border-x text-center">
@@ -109,7 +109,7 @@
                                             value="1"
                                             <?= $item['quantity'] >= (int) $product['stock'] ? 'disabled' : '' ?>
                                             aria-label="Increase quantity"
-                                            class="disabled:opacity-40 px-3 py-1.5 text-gray-700 hover:bg-gray-100 transition">
+                                            class="hover:bg-gray-100 disabled:opacity-40 px-3 py-1.5 text-gray-700 transition">
                                             +
                                         </button>
                                     </div>
