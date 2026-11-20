@@ -148,14 +148,11 @@
                         </span>
                     </div>
 
-                    <form action="<?= base_url('checkout') ?>" method="post" class="mt-6">
-                        <?= csrf_field() ?>
-                        <button
-                            type="submit"
-                            class="bg-blue-900 hover:bg-blue-800 px-5 py-3 rounded-lg w-full font-semibold text-white transition">
-                            Checkout
-                        </button>
-                    </form>
+                    <a
+                        href="<?= base_url('checkout') ?>"
+                        class="block bg-blue-900 hover:bg-blue-800 px-5 py-3 rounded-lg w-full font-semibold text-white text-center">
+                        Checkout
+                    </a>
                 </aside>
             </div>
         <?php endif; ?>
