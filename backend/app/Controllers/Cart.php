@@ -57,20 +57,37 @@ class Cart extends BaseController
         $product = (new ProductModel())->find($productId);
 
         if (!$product) {
-            return redirect()->to(base_url('products'))->with('error', 'Product not found.');
+            return redirect()->to(base_url('products'))
+                ->with('error', 'Product not found.');
         }
 
         if ((int) $product['stock'] < 1) {
-            return redirect()->back()->with('error', 'This product is out of stock.');
+            return redirect()->back()
+                ->with('error', 'This product is out of stock.');
+        }
+
+        $quantity = (int) $this->request->getPost('quantity');
+
+        if ($quantity < 1) {
+            $quantity = 1;
         }
 
         $cart = $this->getCart();
+
         $currentQuantity = (int) ($cart[$productId] ?? 0);
-        $cart[$productId] = min($currentQuantity + 1, (int) $product['stock']);
+
+        $cart[$productId] = min(
+            $currentQuantity + $quantity,
+            (int) $product['stock']
+        );
+
         $this->saveCart($cart);
 
         return redirect()->to(base_url('cart'))
-            ->with('success', $product['name'] . ' was added to your cart.');
+            ->with(
+                'success',
+                $quantity . ' × ' . $product['name'] . ' added to cart.'
+            );
     }
 
     public function update(int $productId = 0)
