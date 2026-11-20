@@ -15,8 +15,7 @@
     <?= view('components/header') ?>
 
     <!-- Header -->
-    <section class="bg-blue-900 py-20 text-white">
-
+    <section class="py-20 text-white contact-banner">
         <div class="mx-auto px-6 text-center container">
 
             <h1 class="font-bold text-5xl">
@@ -32,7 +31,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section class="py-16">
+    <section class="bg-gradient-to-b from-[#af1e1e] to-[#D6C3A2] py-16">
 
         <div class="mx-auto px-6 container">
 
@@ -93,7 +92,7 @@
 
                         <button
                             type="submit"
-                            class="bg-blue-900 hover:bg-blue-800 py-3 rounded-lg w-full text-white">
+                            class="inline-block bg-[#af1e1e] hover:bg-[#eb2525] py-3 rounded-lg w-full text-white hover:scale-105 transition-all duration-300">
                             Send Message
                         </button>
 
@@ -154,6 +153,19 @@
 
     </section>
 
+    <style>
+        .contact-banner {
+            /* Top is clear (0% to 50%), fading to solid color at the bottom (100%) */
+            background-image:
+                linear-gradient(to bottom, rgba(18, 18, 18, 0) 50%, rgb(175, 30, 30) 100%),
+                url('https://img.magnific.com/premium-photo/close-up-red-wine-with-swirling-pattern-wine-showcasing-rich-color-aroma_35927-2026.jpg?semt=ais_hybrid&w=740&q=80');
+
+            background-size: cover;
+            background-position: top center;
+            /* Anchors the top of your image */
+            height: 300px;
+        }
+    </style>
     <!-- Footer -->
     <?= view('components/footer') ?>
 

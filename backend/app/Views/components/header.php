@@ -1,4 +1,4 @@
-<nav class="top-0 z-50 sticky bg-blue-900 shadow-lg text-white">
+<nav class="top-0 z-50 sticky bg-[#8a1e1e] shadow-lg text-white">
 
     <div class="flex justify-between items-center mx-auto px-6 py-4 container">
 
@@ -15,25 +15,29 @@
         <!-- Navigation -->
         <div class="flex items-center space-x-6">
 
-            <a href="/" class="hover:text-yellow-300 transition">
+            <a href="/" class="inline-block hover:text-[#FFB0B0] hover:scale-110 transition transition-all duration-300">
                 Home
             </a>
 
-            <a href="/products" class="hover:text-yellow-300 transition">
+            <a href="/products" class="inline-block hover:text-[#FFB0B0] hover:scale-110 transition transition-all duration-300">
                 Products
             </a>
 
-            <a href="/contact" class="hover:text-yellow-300 transition">
+            <a href="/contact" class="inline-block hover:text-[#FFB0B0] hover:scale-110 transition transition-all duration-300">
                 Contact
             </a>
-
+            <a
+                href="<?= base_url('orders') ?>"
+                class="inline-block hover:text-[#FFB0B0] hover:scale-110 transition transition-all duration-300">
+                My Orders
+            </a>
             <?php if (session()->get('logged_in')): ?>
 
                 <?php $cartItemCount = array_sum((array) session()->get('cart')); ?>
 
                 <a
                     href="<?= base_url('cart') ?>"
-                    class="relative hover:text-yellow-300 transition">
+                    class="inline-block relative hover:text-[#FFB0B0] hover:scale-110 transition transition-all duration-300">
                     Cart
                     <?php if ($cartItemCount > 0): ?>
                         <span class="-top-2 -right-3 absolute bg-yellow-400 px-1.5 rounded-full min-w-5 font-bold text-blue-900 text-xs text-center">
@@ -46,20 +50,30 @@
 
                     <a
                         href="/admin/dashboard"
-                        class="hover:text-yellow-300 transition">
+                        class="inline-block hover:text-yellow-300 hover:scale-110 transition transition-all duration-300">
                         Admin Dashboard
                     </a>
                     <a
-                        href="<?= base_url('/admin/products') ?>"
-                        class="hover:text-yellow-300 transition">
-                        Manage Products
+                        href="<?= base_url('/admin/suppliers') ?>"
+                        class="inline-block hover:text-yellow-300 hover:scale-110 transition-all duration-300">
+                        Suppliers
+                    </a>
+                    <a
+                        href="<?= base_url('/admin/inventory') ?>"
+                        class="inline-block hover:text-yellow-300 hover:scale-110 transition transition-all duration-300">
+                        Inventory
+                    </a>
+                    <a
+                        href="<?= base_url('admin/sales') ?>"
+                        class="inline-block hover:text-yellow-300 hover:scale-110 transition transition-all duration-300">
+                        Sales Report
                     </a>
 
                 <?php endif; ?>
 
                 <a
                     href="/logout"
-                    class="bg-red-600 hover:bg-red-500 px-4 py-2 rounded-lg font-semibold text-white transition">
+                    class="inline-block bg-red-600 hover:bg-red-500 px-4 py-2 rounded-lg font-semibold text-white hover:scale-110 transition transition-all duration-300">
                     Logout
                 </a>
 
@@ -67,12 +81,12 @@
 
                 <a
                     href="/signup"
-                    class="hover:bg-yellow-500 px-4 py-2 border-2 border-yellow-500 rounded-lg font-semibold text-yellow-500 hover:text-black transition">
+                    class="inline-block hover:bg-white px-4 py-2 border-2 border-black rounded-lg font-semibold text-black hover:text-black hover:scale-110 transition transition-all duration-300">
                     Sign Up
                 </a>
                 <a
                     href="/login"
-                    class="bg-yellow-500 hover:bg-yellow-400 px-4 py-2 rounded-lg font-semibold text-black transition">
+                    class="inline-block bg-white hover:bg-[#949494] px-4 py-2 rounded-lg font-semibold text-black hover:scale-110 transition transition-all duration-300">
                     Login
                 </a>
 

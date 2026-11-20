@@ -3,7 +3,7 @@
 
 <?= view('components/head', ['title' => 'Request Restock']) ?>
 
-<body>
+<body class="bg-[#D6C3A2]">
 
     <?= view('components/header') ?>
 
@@ -68,7 +68,7 @@
 
             <button
                 type="submit"
-                class="bg-blue-900 hover:bg-blue-800 px-4 py-3 rounded-lg w-full text-white">
+                class="inline-block bg-[#af1e1e] hover:bg-[#eb2525] px-4 py-3 rounded-lg w-full text-white hover:scale-105 transition-all duration-300">
                 Submit Restock Request
             </button>
 
