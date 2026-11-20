@@ -50,9 +50,14 @@
                         Admin Dashboard
                     </a>
                     <a
-                        href="<?= base_url('/admin/products') ?>"
+                        href="<?= base_url('/admin/suppliers') ?>"
+                        class="inline-block hover:text-yellow-300 hover:scale-110 transition-all duration-300">
+                        Suppliers
+                    </a>
+                    <a
+                        href="<?= base_url('/admin/inventory') ?>"
                         class="inline-block hover:text-yellow-300 hover:scale-110 transition transition-all duration-300">
-                        Manage Products
+                        Inventory
                     </a>
 
                 <?php endif; ?>
