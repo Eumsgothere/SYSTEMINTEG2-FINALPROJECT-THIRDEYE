@@ -62,7 +62,7 @@ $products = [
 
                 <button class="inline-block px-6 py-3 border border-white rounded-lg hover:scale-110 transition-all duration-300">
                     <!-- Put Link Here for Price List -->
-                    <a href="/">
+                    <a href="/products">
                         View Price List
                     </a>
                 </button>
