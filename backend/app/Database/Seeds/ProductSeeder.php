@@ -13,7 +13,7 @@ class ProductSeeder extends Seeder
         $products = [
 
             // SOJU
-            ['name' => 'JINRO', 'category' => 'Soju', 'description' => '', 'price' => 265, 'stock' => 24, 'image' => 'https://foodpanda.dhmedia.io/image/darsktores-ph/food/Correct%20Image.png?height=480'],,
+            ['name' => 'JINRO', 'category' => 'Soju', 'description' => '', 'price' => 265, 'stock' => 24, 'image' => 'https://foodpanda.dhmedia.io/image/darsktores-ph/food/Correct%20Image.png?height=480'],
             ['name' => 'CHAMISOL', 'category' => 'Soju', 'description' => '', 'price' => 110, 'stock' => 40, 'image' => 'https://ralphs.com.ph/products/jinro-chamisul-original-soju-360ml'],
             ['name' => 'CHUMCHURUM', 'category' => 'Soju', 'description' => '', 'price' => 110, 'stock' => 40, 'image' => 'https://company.lottechilsung.co.kr/eng/brand/soju/contentsid/785/index.do'],
             ['name' => 'IICHIKO', 'category' => 'Soju', 'description' => '', 'price' => 1050, 'stock' => 0, 'image' => 'https://www.wine-searcher.com/images/labels/36/61/11053661.jpg'],
