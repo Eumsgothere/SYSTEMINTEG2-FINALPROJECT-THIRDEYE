@@ -31,7 +31,7 @@ $products = [
 
 <?= view('components/head', ['title' => 'Floe Trading Goods']) ?>
 
-<body>
+<body class="bg-[#D6C3A2]">
 
     <?= view('components/header') ?>
 
@@ -56,11 +56,11 @@ $products = [
 
             <div class="space-x-4">
                 <!-- Put Link Here -->
-                <a href="signup" class="inline-block bg-yellow-500 hover:bg-yellow-600 px-6 py-3 rounded-lg font-bold">
+                <a href="signup" class="inline-block inline-block bg-[#af1e1e] hover:bg-[#eb2525] px-6 py-3 rounded-lg font-bold hover:scale-110 transition-all duration-300">
                     Shop Now
                 </a>
 
-                <button class="px-6 py-3 border border-white rounded-lg">
+                <button class="inline-block px-6 py-3 border border-white rounded-lg hover:scale-110 transition-all duration-300">
                     <!-- Put Link Here for Price List -->
                     <a href="/">
                         View Price List
@@ -73,7 +73,7 @@ $products = [
     </section>
 
     <!-- CATEGORIES -->
-    <section class="bg-white py-16">
+    <section class="bg-gradient-to-b from-[#A26B4A] to-[#D6C3A2]; py-16">
 
         <div class="mx-auto px-6 container">
 
@@ -81,30 +81,30 @@ $products = [
                 Shop By Category
             </h2>
 
-            <div class="gap-6 grid md:grid-cols-5">
+            <div class="gap-3 grid md:grid-cols-5">
 
-                <div class="bg-blue-50 shadow-lg p-8 rounded-xl text-center">
-                    <div class="text-5xl">🍶</div>
+                <div class="bg-[#CF2E06] shadow-lg hover:shadow-2xl p-3 rounded-xl text-center hover:scale-105 transition hover:-translate-y-2 duration-300 ease-in-out cursor-pointer">
+                    <div class="Soju-front"></div>
                     <h3 class="mt-3 font-bold">Soju</h3>
                 </div>
 
-                <div class="bg-blue-50 shadow-lg p-8 rounded-xl text-center">
-                    <div class="text-5xl">🌵</div>
+                <div class="bg-[#CF2E06] shadow-lg hover:shadow-2xl p-3 rounded-xl text-center hover:scale-105 transition hover:-translate-y-2 duration-300 ease-in-out cursor-pointer">
+                    <div class="Tequila-front"></div>
                     <h3 class="mt-3 font-bold">Tequila</h3>
                 </div>
 
-                <div class="bg-blue-50 shadow-lg p-8 rounded-xl text-center">
-                    <div class="text-5xl">🍷</div>
+                <div class="bg-[#CF2E06] shadow-lg hover:shadow-2xl p-3 rounded-xl text-center hover:scale-105 transition hover:-translate-y-2 duration-300 ease-in-out cursor-pointer">
+                    <div class="RedWine-front"></div>
                     <h3 class="mt-3 font-bold">Red Wine</h3>
                 </div>
 
-                <div class="bg-blue-50 shadow-lg p-8 rounded-xl text-center">
-                    <div class="text-5xl">🥃</div>
+                <div class="bg-[#CF2E06] shadow-lg hover:shadow-2xl p-3 rounded-xl text-center hover:scale-105 transition hover:-translate-y-2 duration-300 ease-in-out cursor-pointer">
+                    <div class="Whiskey-front"></div>
                     <h3 class="mt-3 font-bold">Whiskey</h3>
                 </div>
 
-                <div class="bg-blue-50 shadow-lg p-8 rounded-xl text-center">
-                    <div class="text-5xl">🥤</div>
+                <div class="bg-[#CF2E06] shadow-lg hover:shadow-2xl p-3 rounded-xl text-center hover:scale-105 transition hover:-translate-y-2 duration-300 ease-in-out cursor-pointer">
+                    <div class="Beverages-front"></div>
                     <h3 class="mt-3 font-bold">Beverages</h3>
                 </div>
 
@@ -115,7 +115,7 @@ $products = [
     </section>
 
     <!-- PRODUCTS -->
-    <section id="products" class="bg-gray-100 py-16">
+    <section id="products" class="bg-[#D6C3A2] py-16">
 
         <div class="mx-auto px-6 container">
 
@@ -140,7 +140,7 @@ $products = [
                 foreach ($products as $product):
                 ?>
 
-                    <div class="bg-white shadow-lg rounded-xl overflow-hidden">
+                    <div class="bg-white shadow-lg hover:shadow-2xl p-3 rounded-xl text-center hover:scale-105 transition hover:-translate-y-2 duration-300 ease-in-out cursor-pointer">
 
                         https://images.unsplash.com/photo-1584916201218-f4242ceb4809?w=600 >
 
@@ -150,12 +150,12 @@ $products = [
                                 <?= $product[0] ?>
                             </h3>
 
-                            <p class="mt-4 font-bold text-blue-900 text-2xl">
+                            <p class="mt-4 font-bold text-[#af1e1e] text-2xl">
                                 <?= $product[1] ?>
                             </p>
 
                             <button
-                                class="bg-blue-900 hover:bg-blue-700 mt-4 py-2 rounded-lg w-full text-white">
+                                class="bg-[#af1e1e] hover:bg-[#eb2525] mt-4 py-2 rounded-lg w-full text-white">
                                 Add To Cart
                             </button>
 
@@ -172,30 +172,30 @@ $products = [
     </section>
 
     <!-- COMPANY STATS -->
-    <section class="bg-blue-900 py-16 text-white">
+    <section class="bg-[#D6C3A2] py-16 text-white">
 
         <div class="mx-auto px-6 container">
 
             <div class="gap-10 grid md:grid-cols-4 text-center">
 
                 <div>
-                    <h2 class="font-bold text-5xl">500+</h2>
-                    <p>Happy Customers</p>
+                    <h2 class="font-bold text-[#5C0000] text-5xl">500+</h2>
+                    <p class="text-[#5C0000]">Happy Customers</p>
                 </div>
 
                 <div>
-                    <h2 class="font-bold text-5xl">50+</h2>
-                    <p>Products</p>
+                    <h2 class="font-bold text-[#5C0000] text-5xl">50+</h2>
+                    <p class="text-[#5C0000]">Products</p>
                 </div>
 
                 <div>
-                    <h2 class="font-bold text-5xl">24/7</h2>
-                    <p>Online Orders</p>
+                    <h2 class="font-bold text-[#5C0000] text-5xl">24/7</h2>
+                    <p class="text-[#5C0000]">Online Orders</p>
                 </div>
 
                 <div>
-                    <h2 class="font-bold text-5xl">100%</h2>
-                    <p>Inventory Tracking</p>
+                    <h2 class="font-bold text-[#5C0000] text-5xl">100%</h2>
+                    <p class="text-[#5C0000]">Inventory Tracking</p>
                 </div>
 
             </div>
@@ -205,7 +205,7 @@ $products = [
     </section>
 
     <!-- WHY CHOOSE US -->
-    <section class="bg-white py-16">
+    <section class="bg-gradient-to-b from-[#D6C3A2] to-[#A26B4A] py-16">
 
         <div class="mx-auto px-6 container">
 
@@ -216,22 +216,22 @@ $products = [
             <div class="gap-8 grid md:grid-cols-4 text-center">
 
                 <div>
-                    <div class="text-6xl">📦</div>
+                    <div class="Inventory-front"></div>
                     <h3 class="mt-3 font-bold">Real-Time Inventory</h3>
                 </div>
 
                 <div>
-                    <div class="text-6xl">🚚</div>
+                    <div class="Delivery-front"></div>
                     <h3 class="mt-3 font-bold">Fast Delivery</h3>
                 </div>
 
                 <div>
-                    <div class="text-6xl">🔒</div>
+                    <div class="Secure-front"></div>
                     <h3 class="mt-3 font-bold">Secure Ordering</h3>
                 </div>
 
                 <div>
-                    <div class="text-6xl">📊</div>
+                    <div class="Sales-front"></div>
                     <h3 class="mt-3 font-bold">Sales Monitoring</h3>
                 </div>
 
@@ -242,11 +242,11 @@ $products = [
     </section>
 
     <!-- LOCATION -->
-    <section id="contact" class="bg-white py-16">
+    <section id="contact" class="bg-[#2b2620] py-16">
 
         <div class="mx-auto px-6 container">
 
-            <h2 class="mb-12 font-bold text-4xl text-center">
+            <h2 class="mb-12 font-bold text-white text-4xl text-center">
                 Find Our Store
             </h2>
 
@@ -269,9 +269,9 @@ $products = [
                 <!-- SHOP DETAILS -->
 
 
-                <div class="flex flex-col justify-center">
+                <div class="flex flex-col justify-center text-[#FFB0B0]">
 
-                    <h3 class="font-bold text-blue-900 text-3xl">
+                    <h3 class="font-bold text-white text-3xl">
                         Floe Consumer Goods Trading
                     </h3>
 
@@ -293,7 +293,7 @@ $products = [
                     <a
                         href="https://maps.app.goo.gl/HBGafXimntBixBEo6"
                         target="_blank"
-                        class="inline-block bg-blue-900 hover:bg-blue-700 mt-6 px-6 py-3 rounded-lg text-white">
+                        class="inline-block inline-block bg-[#af1e1e] hover:bg-[#eb2525] mt-6 px-6 py-3 rounded-lg text-white hover:scale-110 transition-all duration-300">
                         Get Directions
                     </a>
                 </div>
@@ -303,6 +303,163 @@ $products = [
         </div>
 
     </section>
+
+
+    <style>
+        /* Images */
+        .Soju-front {
+
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtgIg6dLzLHuK7S2B1uhX2WbHLQQGMSX_occ9CfJcEcpgz0th9uM-0mRo&s=10');
+
+            /* 2. Give the div dimensions so the image is visible */
+            width: 100%;
+            height: 150px;
+
+            /* 3. Control how the image fits and aligns */
+            background-size: cover;
+            /* Scales image to fill the div without stretching */
+            background-position: center;
+            /* Centers the image */
+            background-repeat: no-repeat;
+            /* Prevents tiling */
+        }
+
+        .Tequila-front {
+
+            background-image: url('https://pbi.nyc3.digitaloceanspaces.com/images/Famiy_of_tequilas_in_agave_field_-_Tequila_Bri.width-800_NjYgz9S.jpg');
+
+            /* 2. Give the div dimensions so the image is visible */
+            width: 100%;
+            height: 150px;
+
+            /* 3. Control how the image fits and aligns */
+            background-size: cover;
+            /* Scales image to fill the div without stretching */
+            background-position: center;
+            /* Centers the image */
+            background-repeat: no-repeat;
+            /* Prevents tiling */
+        }
+
+        .RedWine-front {
+
+            background-image: url('https://cdn.shopify.com/s/files/1/0727/3496/5991/files/Glass_of_red_wine_with_grapes_bottle_corks_and_opener_on_a_rustic_wooden_table.png?v=1773641463');
+
+            /* 2. Give the div dimensions so the image is visible */
+            width: 100%;
+            height: 150px;
+
+            /* 3. Control how the image fits and aligns */
+            background-size: cover;
+            /* Scales image to fill the div without stretching */
+            background-position: center;
+            /* Centers the image */
+            background-repeat: no-repeat;
+            /* Prevents tiling */
+        }
+
+        .Whiskey-front {
+
+            background-image: url('https://www.tasteofhome.com/wp-content/uploads/2019/08/shutterstock_1101170873.jpg');
+
+            /* 2. Give the div dimensions so the image is visible */
+            width: 100%;
+            height: 150px;
+
+            /* 3. Control how the image fits and aligns */
+            background-size: cover;
+            /* Scales image to fill the div without stretching */
+            background-position: center;
+            /* Centers the image */
+            background-repeat: no-repeat;
+            /* Prevents tiling */
+        }
+
+        .Beverages-front {
+
+            background-image: url('https://www.just-drinks.com/wp-content/uploads/sites/29/2022/07/Drinks-trends.png');
+
+            /* 2. Give the div dimensions so the image is visible */
+            width: 100%;
+            height: 150px;
+
+            /* 3. Control how the image fits and aligns */
+            background-size: cover;
+            /* Scales image to fill the div without stretching */
+            background-position: center;
+            /* Centers the image */
+            background-repeat: no-repeat;
+            /* Prevents tiling */
+        }
+
+        .Inventory-front {
+
+            background-image: url('https://cdn-icons-png.flaticon.com/512/6283/6283090.png');
+
+            /* 2. Give the div dimensions so the image is visible */
+            width: 100%;
+            height: 300px;
+
+            /* 3. Control how the image fits and aligns */
+            background-size: cover;
+            /* Scales image to fill the div without stretching */
+            background-position: center;
+            /* Centers the image */
+            background-repeat: no-repeat;
+            /* Prevents tiling */
+        }
+
+        .Delivery-front {
+
+            background-image: url('https://cdn-icons-png.flaticon.com/512/4212/4212257.png');
+
+            /* 2. Give the div dimensions so the image is visible */
+            width: 100%;
+            height: 300px;
+
+            /* 3. Control how the image fits and aligns */
+            background-size: cover;
+            /* Scales image to fill the div without stretching */
+            background-position: center;
+            /* Centers the image */
+            background-repeat: no-repeat;
+            /* Prevents tiling */
+        }
+
+        .Secure-front {
+
+            background-image: url('https://cdn-icons-png.flaticon.com/512/95/95454.png');
+
+            /* 2. Give the div dimensions so the image is visible */
+            width: 100%;
+            height: 300px;
+
+            /* 3. Control how the image fits and aligns */
+            background-size: cover;
+            /* Scales image to fill the div without stretching */
+            background-position: center;
+            /* Centers the image */
+            background-repeat: no-repeat;
+            /* Prevents tiling */
+        }
+
+        .Sales-front {
+
+            background-image: url('https://cdn-icons-png.flaticon.com/512/2344/2344579.png');
+
+            /* 2. Give the div dimensions so the image is visible */
+            width: 100%;
+            height: 300px;
+
+            /* 3. Control how the image fits and aligns */
+            background-size: cover;
+            /* Scales image to fill the div without stretching */
+            background-position: center;
+            /* Centers the image */
+            background-repeat: no-repeat;
+            /* Prevents tiling */
+        }
+    </style>
 
     <!-- FOOTER -->
     <?= view('components/footer') ?>

@@ -17,7 +17,7 @@
     <?= view('components/header') ?>
 
     <!-- PAGE HEADER -->
-    <section class="bg-blue-900 py-20 text-white">
+    <section class="py-20 text-white product-banner">
         <div class="mx-auto px-6 text-center container">
             <h1 class="font-bold text-5xl">
                 Our Products
@@ -29,7 +29,7 @@
     </section>
 
     <!-- SEARCH -->
-    <section class="bg-white py-8">
+    <section class="bg-gradient-to-b from-[#af1e1e] to-[#ffffff] py-8">
         <div class="mx-auto px-6 container">
             <input
                 id="product-search"
@@ -151,7 +151,7 @@
     </script>
 
     <!-- CTA SECTION -->
-    <section class="bg-blue-900 py-20 text-white">
+    <section class="bg-[#af1e1e] py-20 text-white">
         <div class="mx-auto px-6 text-center container">
             <h2 class="font-bold text-4xl">
                 Looking for Bulk Orders?
@@ -163,11 +163,26 @@
 
             <a
                 href="<?= base_url('/contact') ?>"
-                class="inline-block bg-white mt-6 px-6 py-3 rounded-lg font-semibold text-blue-900">
+                class="inline-block inline-block bg-white mt-6 px-6 py-3 rounded-lg font-semibold text-[#af1e1e] hover:scale-110 transition-all duration-300">
                 Contact Us
             </a>
         </div>
     </section>
+
+    <style>
+        .product-banner {
+            /* Top is clear (0% to 50%), fading to solid color at the bottom (100%) */
+            background-image:
+                linear-gradient(to bottom, rgba(18, 18, 18, 0) 50%, rgb(175, 30, 30) 100%),
+                url('https://img.magnific.com/premium-photo/close-up-red-wine-with-swirling-pattern-wine-showcasing-rich-color-aroma_35927-2026.jpg?semt=ais_hybrid&w=740&q=80');
+
+            background-size: cover;
+            background-position: top center;
+            /* Anchors the top of your image */
+            height: 300px;
+        }
+    </style>
+
     <?= view('components/footer') ?>
 </body>
 

@@ -6,6 +6,10 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
     <style>
         html {
             scroll-behavior: smooth;
@@ -18,9 +22,9 @@
 
         .hero-gradient {
             background: linear-gradient(135deg,
-                    #1e3a8a,
-                    #1e40af,
-                    #2563eb);
+                    #8a1e1e,
+                    #af1e1e,
+                    #eb2525);
         }
 
         .card-hover {
@@ -33,13 +37,13 @@
         }
 
         .btn-primary {
-            background-color: #1e3a8a;
+            background-color: #8a1e1e;
             color: white;
             transition: 0.3s;
         }
 
         .btn-primary:hover {
-            background-color: #1d4ed8;
+            background-color: #d81d1d;
         }
 
         .section-title {
