@@ -24,6 +24,7 @@ $routes->post('cart/update/(:num)', 'Cart::update/$1');
 $routes->post('cart/remove/(:num)', 'Cart::remove/$1');
 $routes->get('checkout', 'Checkout::index');
 $routes->post('checkout/complete', 'Checkout::complete');
+$routes->get('orders', 'Orders::index');
 
 // ====================
 // Authentication

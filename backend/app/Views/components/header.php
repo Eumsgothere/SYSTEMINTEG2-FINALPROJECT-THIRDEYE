@@ -26,7 +26,11 @@
             <a href="/contact" class="inline-block hover:text-[#FFB0B0] hover:scale-110 transition transition-all duration-300">
                 Contact
             </a>
-
+            <a
+                href="<?= base_url('orders') ?>"
+                class="inline-block hover:text-[#FFB0B0] hover:scale-110 transition transition-all duration-300">
+                My Orders
+            </a>
             <?php if (session()->get('logged_in')): ?>
 
                 <?php $cartItemCount = array_sum((array) session()->get('cart')); ?>
