@@ -29,6 +29,19 @@
 
             <?php if (session()->get('logged_in')): ?>
 
+                <?php $cartItemCount = array_sum((array) session()->get('cart')); ?>
+
+                <a
+                    href="<?= base_url('cart') ?>"
+                    class="relative hover:text-yellow-300 transition">
+                    Cart
+                    <?php if ($cartItemCount > 0): ?>
+                        <span class="-top-2 -right-3 absolute bg-yellow-400 px-1.5 rounded-full min-w-5 font-bold text-blue-900 text-xs text-center">
+                            <?= (int) $cartItemCount ?>
+                        </span>
+                    <?php endif; ?>
+                </a>
+
                 <?php if (session()->get('role') === 'admin'): ?>
 
                     <a
