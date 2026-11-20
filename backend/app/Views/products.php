@@ -3,7 +3,7 @@
 
 <?= view('components/head', ['title' => 'Products']) ?>
 
-<body>
+<body class="bg-[#D6C3A2]">
     <?php if ($successMessage = session()->getFlashdata('success')): ?>
 
         <script>
@@ -29,7 +29,7 @@
     </section>
 
     <!-- SEARCH -->
-    <section class="bg-gradient-to-b from-[#af1e1e] to-[#ffffff] py-8">
+    <section class="bg-gradient-to-b from-[#af1e1e] to-[#D6C3A2] py-8">
         <div class="mx-auto px-6 container">
             <input
                 id="product-search"
@@ -49,8 +49,7 @@
                 <?php if (!empty($products)): ?>
 
                     <?php foreach ($products as $product): ?>
-
-                        <div class="bg-white shadow-lg hover:shadow-2xl rounded-2xl overflow-hidden transition product-card">
+                        <div class="inline-block bg-white shadow-lg hover:shadow-2xl rounded-2xl overflow-hidden hover:scale-102 transition transition-all duration-300 product-card">
 
                             <img
                                 src="<?= $product['image'] ?>"
@@ -67,8 +66,8 @@
                                     <?= $product['name'] ?>
                                 </h3>
 
-                                <p class="mt-3 font-bold text-blue-900 text-2xl">
-                                    ₱<?= number_format((float)$product['price'], 2) ?>
+                                <p class="mt-3 font-bold text-[#2b2620] text-2xl">
+                                    ₱<?= number_format((float) $product['price'], 2) ?>
                                 </p>
 
                                 <div class="mt-3">
@@ -90,63 +89,25 @@
                                         <form action="<?= base_url('cart/add/' . (int)$product['id']) ?>" method="post">
 
                                             <?= csrf_field() ?>
-
-                                            <label class="block mb-2 font-medium text-gray-600 text-sm">
-                                                Quantity
-                                            </label>
-
-                                            <div class="flex items-center gap-2 mt-4">
-
-                                                <div class="flex items-center border border-gray-300 rounded-lg overflow-hidden">
-
-                                                    <button
-                                                        type="button"
-                                                        onclick="decreaseQty(<?= $product['id'] ?>)"
-                                                        class="bg-gray-100 hover:bg-gray-200 px-3 py-2 font-bold">
-                                                        −
-                                                    </button>
-
-                                                    <input
-                                                        type="number"
-                                                        id="qty-<?= $product['id'] ?>"
-                                                        name="quantity"
-                                                        value="1"
-                                                        min="1"
-                                                        max="<?= $product['stock'] ?>"
-                                                        class="border-x focus:outline-none w-12 text-center">
-
-                                                    <button
-                                                        type="button"
-                                                        onclick="increaseQty(<?= $product['id'] ?>, <?= $product['stock'] ?>)"
-                                                        class="bg-gray-100 hover:bg-gray-200 px-3 py-2 font-bold">
-                                                        +
-                                                    </button>
-
-                                                </div>
-
-                                                <button
-                                                    type="submit"
-                                                    class="flex-1 bg-blue-900 hover:bg-blue-800 px-4 py-2 rounded-lg font-medium text-white text-sm">
-                                                    🛒 Add
-                                                </button>
-
-                                                <a
-                                                    href="<?= base_url('view-products/' . (int)$product['id']) ?>"
-                                                    class="hover:bg-blue-50 px-3 py-2 border border-blue-900 rounded-lg text-blue-900 text-sm">
-                                                    View
-                                                </a>
-
-                                            </div>
-
+                                            <button
+                                                type="submit"
+                                                class="inline-block bg-[#2b2620] hover:bg-[#615247] py-2 rounded-lg w-full text-white hover:scale-105 transition-all duration-300">
+                                                Add to Cart
+                                            </button>
                                         </form>
 
+                                        <a
+                                            href="<?= base_url('view-products/' . (int) $product['id']) ?>"
+                                            class="inline-block px-4 py-2 border border-[#2b2620] rounded-lg text-[#2b2620] text-center hover:scale-105 transition-all duration-300">
+                                            View
+                                        </a>
                                     </div>
 
                                 <?php else: ?>
 
                                     <a
                                         href="<?= base_url('restock-request/' . $product['id']) ?>"
-                                        class="block bg-red-600 hover:bg-red-700 mt-4 px-4 py-2 rounded-lg w-full text-white text-center">
+                                        class="block inline-block bg-red-600 hover:bg-red-700 mt-4 px-4 py-2 rounded-lg w-full text-white text-center hover:scale-105 transition-all duration-300">
                                         Request Restock
                                     </a>
 

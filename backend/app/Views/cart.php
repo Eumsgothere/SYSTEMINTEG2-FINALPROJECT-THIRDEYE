@@ -3,7 +3,7 @@
 
 <?= view('components/head', ['title' => 'Shopping Cart']) ?>
 
-<body>
+<body class="bg-[#D6C3A2]">
     <?= view('components/header') ?>
 
     <main class="mx-auto px-6 py-10 container">
@@ -117,7 +117,7 @@
 
                                 <div class="md:block flex justify-between mt-3 md:mt-0">
                                     <span class="md:hidden text-gray-500 text-sm">Total Price</span>
-                                    <span class="font-bold text-blue-900">
+                                    <span class="font-bold text-black">
                                         &#8369;<?= number_format((float) $item['line_total'], 2) ?>
                                     </span>
                                 </div>
@@ -143,7 +143,7 @@
                     </div>
                     <div class="flex justify-between mt-4 pt-4 border-gray-200 border-t">
                         <span class="font-semibold text-gray-900">Total</span>
-                        <span class="font-bold text-blue-900 text-xl">
+                        <span class="font-bold text-[#00000] text-xl">
                             &#8369;<?= number_format((float) $total, 2) ?>
                         </span>
                     </div>
@@ -152,7 +152,7 @@
                         <?= csrf_field() ?>
                         <button
                             type="submit"
-                            class="bg-blue-900 hover:bg-blue-800 px-5 py-3 rounded-lg w-full font-semibold text-white transition">
+                            class="inline-block bg-[#af1e1e] hover:bg-[#eb2525] px-5 py-3 rounded-lg w-full font-semibold text-white hover:scale-110 transition transition-all duration-300">
                             Checkout
                         </button>
                     </form>

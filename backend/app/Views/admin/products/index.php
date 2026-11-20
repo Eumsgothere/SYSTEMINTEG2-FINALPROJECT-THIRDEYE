@@ -6,7 +6,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="bg-gray-100">
+<body class="bg-[#D6C3A2]">
 
     <?= view('components/header') ?>
 
@@ -20,7 +20,7 @@
 
             <a
                 href="<?= base_url('/admin/products/create') ?>"
-                class="bg-green-600 hover:bg-green-500 px-4 py-2 rounded-lg text-white">
+                class="inline-block bg-[#2b2620] hover:bg-[#423931] px-4 py-2 rounded-lg text-white hover:scale-110 transition-all duration-300">
                 Add Product
             </a>
 
@@ -30,7 +30,7 @@
 
             <table class="w-full">
 
-                <thead class="bg-blue-900 text-white">
+                <thead class="bg-[#2b2620] text-white">
 
                     <tr>
                         <th class="p-3 text-left">ID</th>
@@ -77,14 +77,14 @@
 
                                         <a
                                             href="<?= base_url('/admin/products/edit/' . $product['id']) ?>"
-                                            class="bg-blue-500 hover:bg-blue-400 px-3 py-1 rounded text-white">
+                                            class="inline-block bg-blue-500 hover:bg-blue-400 px-3 py-1 rounded text-white hover:scale-110 transition-all duration-300">
                                             Edit
                                         </a>
 
                                         <a
                                             href="<?= base_url('/admin/products/delete/' . $product['id']) ?>"
                                             onclick="return confirm('Delete this product?')"
-                                            class="bg-red-600 hover:bg-red-500 px-3 py-1 rounded text-white">
+                                            class="inline-block bg-red-600 hover:bg-red-500 px-3 py-1 rounded text-white hover:scale-110 transition-all duration-300">
                                             Delete
                                         </a>
 
