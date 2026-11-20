@@ -35,14 +35,17 @@ $routes->get('logout', 'AuthController::logout');
 $routes->get('signup', 'AuthController::signup');
 $routes->post('register', 'AuthController::register');
 
+
 // ====================
 // Admin Pages
 // ====================
 
 $routes->group('admin', ['filter' => 'admin'], static function ($routes) {
-
-    // Dashboard
+    $routes->get('inventory', 'AdminController::inventory');
     $routes->get('dashboard', 'AdminController::dashboard');
+    $routes->get('suppliers', 'SupplierController::index');
+    $routes->get('suppliers/create', 'SupplierController::create');
+    $routes->post('suppliers/store', 'SupplierController::store');
 
     // Product Management
     $routes->get('products', 'ProductController::index');

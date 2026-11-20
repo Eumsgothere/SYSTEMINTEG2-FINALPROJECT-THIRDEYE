@@ -20,20 +20,45 @@ class AdminController extends BaseController
 
         $restockRequests = $restockRequestsModel
             ->select('restock_requests.*, products.name AS product_name')
-            ->join('products', 'products.id = restock_requests.product_id', 'left')
+            ->join(
+                'products',
+                'products.id = restock_requests.product_id',
+                'left'
+            )
             ->where('restock_requests.status', 'pending')
             ->orderBy('restock_requests.created_at', 'DESC')
             ->findAll();
 
         $data = [
-            'users'            => $users->countAll(),
-            'products'         => $products->countAll(),
-            'inventory'        => $inventory->countAll(),
-            'sales'            => $sales->countAll(),
-            'restockRequests'  => $restockRequests,
-            'restockCount'     => count($restockRequests),
+            'users'           => $users->countAll(),
+            'products'        => $products->countAll(),
+            'inventory'       => $inventory->countAll(),
+            'sales'           => $sales->countAll(),
+            'restockRequests' => $restockRequests,
+            'restockCount'    => count($restockRequests),
         ];
 
         return view('admin/dashboard', $data);
+    }
+
+    public function inventory()
+    {
+        $productModel = new ProductModel();
+
+        $data = [
+            'products'   => $productModel->findAll(),
+            'inStock'    => $productModel
+                ->where('stock >', 10)
+                ->countAllResults(),
+            'lowStock'   => $productModel
+                ->where('stock <=', 10)
+                ->where('stock >', 0)
+                ->countAllResults(),
+            'outOfStock' => $productModel
+                ->where('stock', 0)
+                ->countAllResults(),
+        ];
+
+        return view('admin/inventory', $data);
     }
 }
