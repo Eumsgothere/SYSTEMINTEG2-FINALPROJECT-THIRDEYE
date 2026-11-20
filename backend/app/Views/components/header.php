@@ -63,6 +63,11 @@
                         class="inline-block hover:text-yellow-300 hover:scale-110 transition transition-all duration-300">
                         Inventory
                     </a>
+                    <a
+                        href="<?= base_url('admin/sales') ?>"
+                        class="inline-block hover:text-yellow-300 hover:scale-110 transition transition-all duration-300">
+                        Sales Report
+                    </a>
 
                 <?php endif; ?>
 
