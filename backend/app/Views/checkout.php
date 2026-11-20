@@ -19,7 +19,7 @@
                 <p class="font-semibold text-gray-800 text-xl">There were no items to check out.</p>
                 <a
                     href="<?= base_url('products') ?>"
-                    class="inline-block inline-block bg-[#af1e1e] hover:bg-[#eb2525] mt-6 px-5 py-3 rounded-lg font-semibold text-white hover:scale-110 transition transition-all duration-300">
+                    class="inline-block bg-blue-900 hover:bg-blue-800 mt-6 px-5 py-3 rounded-lg font-semibold text-white transition">
                     Browse Products
                 </a>
             </section>
@@ -58,7 +58,7 @@
                                 <p class="text-gray-500 text-sm">
                                     &#8369;<?= number_format((float) $product['price'], 2) ?> each
                                 </p>
-                                <p class="mt-1 font-bold text-[#2b2620]">
+                                <p class="mt-1 font-bold text-blue-900">
                                     &#8369;<?= number_format((float) $item['line_total'], 2) ?>
                                 </p>
                             </div>
@@ -68,7 +68,7 @@
 
                 <div class="flex justify-between items-center bg-gray-50 px-6 py-5 border-gray-200 border-t">
                     <span class="font-semibold text-gray-900">Total</span>
-                    <span class="font-bold text-[#2b2620] text-2xl">
+                    <span class="font-bold text-blue-900 text-2xl">
                         &#8369;<?= number_format((float) $total, 2) ?>
                     </span>
                 </div>
@@ -77,7 +77,7 @@
             <div class="mt-6 text-center">
                 <a
                     href="<?= base_url('products') ?>"
-                    class="inline-block font-medium text-[#af1e1e] hover:scale-110 transition-all duration-300 hover:[#eb2525]">
+                    class="font-medium text-blue-900 hover:text-blue-700">
                     Continue Shopping
                 </a>
             </div>
