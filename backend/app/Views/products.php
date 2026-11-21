@@ -29,7 +29,7 @@
     </section>
 
     <!-- SEARCH -->
-    <section class="bg-gradient-to-b from-[#af1e1e] to-[#ffffff] py-8">
+    <section class="bg-gradient-to-b from-[#af1e1e] to-[#D6C3A2] py-8">
         <div class="mx-auto px-6 container">
             <input
                 id="product-search"
@@ -41,7 +41,7 @@
     </section>
 
     <!-- PRODUCT GRID -->
-    <section class="py-16">
+    <section class="bg-[#D6C3A2] py-16">
         <div class="mx-auto px-6 container">
 
             <div class="gap-8 grid md:grid-cols-4">
