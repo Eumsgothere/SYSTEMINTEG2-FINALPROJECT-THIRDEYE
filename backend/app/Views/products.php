@@ -85,9 +85,10 @@
 
                                 <?php if ((int)$product['stock'] > 0): ?>
 
-                                    <div class="mt-4">
+                                    <div class="flex gap-2 mt-4">
 
-                                        <form action="<?= base_url('cart/add/' . (int)$product['id']) ?>" method="post">
+                                        <form action="<?= base_url('cart/add/' . (int)$product['id']) ?>" method="post"
+                                            class="flex-[2]">
 
                                             <?= csrf_field() ?>
 

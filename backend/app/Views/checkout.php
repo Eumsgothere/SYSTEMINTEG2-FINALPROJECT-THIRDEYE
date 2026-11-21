@@ -3,7 +3,7 @@
 
 <?= view('components/head', ['title' => 'Checkout']) ?>
 
-<body>
+<body class="bg-[#D6C3A2]">
     <?= view('components/header') ?>
 
     <main class="mx-auto px-6 py-10 container">
