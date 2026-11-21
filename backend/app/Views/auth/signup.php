@@ -8,7 +8,7 @@
 </head>
 
 
-<body class="bg-gray-100">
+<body class="bg-[#D6C3A2]">
 
     <div class="flex justify-center items-center min-h-screen">
 
@@ -88,7 +88,7 @@
 
                 <button
                     type="submit"
-                    class="bg-blue-900 hover:bg-blue-800 py-2 rounded w-full text-white">
+                    class="inline-block bg-[#af1e1e] hover:bg-[#eb2525] py-2 rounded w-full text-white hover:scale-110 transition-all duration-300">
                     Create Account
                 </button>
 
@@ -99,7 +99,7 @@
 
                 <a
                     href="<?= base_url('/login') ?>"
-                    class="font-semibold text-blue-900 hover:underline">
+                    class="inline-block font-semibold text-blue-900 hover:underline hover:scale-105 transition-all duration-300">
                     Login Here
                 </a>
             </p>

@@ -84,21 +84,22 @@
 
                                 <?php if ((int)$product['stock'] > 0): ?>
 
-                                    <div class="mt-4">
+                                    <div class="flex gap-2 mt-4">
 
-                                        <form action="<?= base_url('cart/add/' . (int)$product['id']) ?>" method="post">
+                                        <form action="<?= base_url('cart/add/' . (int)$product['id']) ?>" method="post"
+                                            class="flex-[2]">
 
                                             <?= csrf_field() ?>
                                             <button
                                                 type="submit"
-                                                class="inline-block bg-[#2b2620] hover:bg-[#615247] py-2 rounded-lg w-full text-white hover:scale-105 transition-all duration-300">
+                                                class="bg-[#2b2620] hover:bg-[#615247] py-2 rounded-lg w-full text-white hover:scale-105 transition-all duration-300">
                                                 Add to Cart
                                             </button>
                                         </form>
 
                                         <a
                                             href="<?= base_url('view-products/' . (int) $product['id']) ?>"
-                                            class="inline-block px-4 py-2 border border-[#2b2620] rounded-lg text-[#2b2620] text-center hover:scale-105 transition-all duration-300">
+                                            class="flex-1 px-4 py-2 border border-[#2b2620] rounded-lg text-[#2b2620] text-center hover:scale-105 transition-all duration-300">
                                             View
                                         </a>
                                     </div>
