@@ -26,7 +26,11 @@
             <a href="/contact" class="inline-block hover:text-[#FFB0B0] hover:scale-110 transition transition-all duration-300">
                 Contact
             </a>
-
+            <a
+                href="<?= base_url('orders') ?>"
+                class="inline-block hover:text-[#FFB0B0] hover:scale-110 transition transition-all duration-300">
+                My Orders
+            </a>
             <?php if (session()->get('logged_in')): ?>
 
                 <?php $cartItemCount = array_sum((array) session()->get('cart')); ?>
@@ -46,13 +50,23 @@
 
                     <a
                         href="/admin/dashboard"
-                        class="inline-block hover:bg-[#FFB0B0] px-4 py-2 border-2 border-white rounded-lg font-semibold text-white hover:text-white hover:scale-105 transition transition-all duration-300">
+                        class="inline-block hover:text-yellow-300 hover:scale-110 transition transition-all duration-300">
                         Admin Dashboard
                     </a>
                     <a
-                        href="<?= base_url('/admin/products') ?>"
-                        class="inline-block hover:bg-[#FFB0B0] px-4 py-2 border-2 border-white rounded-lg font-semibold text-white hover:text-white hover:scale-105 transition transition-all duration-300">
-                        Manage Products
+                        href="<?= base_url('/admin/suppliers') ?>"
+                        class="inline-block hover:text-yellow-300 hover:scale-110 transition-all duration-300">
+                        Suppliers
+                    </a>
+                    <a
+                        href="<?= base_url('/admin/inventory') ?>"
+                        class="inline-block hover:text-yellow-300 hover:scale-110 transition transition-all duration-300">
+                        Inventory
+                    </a>
+                    <a
+                        href="<?= base_url('admin/sales') ?>"
+                        class="inline-block hover:text-yellow-300 hover:scale-110 transition transition-all duration-300">
+                        Sales Report
                     </a>
 
                 <?php endif; ?>
@@ -67,7 +81,7 @@
 
                 <a
                     href="/signup"
-                    class="inline-block hover:bg-[#FFB0B0] px-4 py-2 border-2 border-white rounded-lg font-semibold text-white hover:text-[#af1e1e] hover:scale-110 transition transition-all duration-300">
+                    class="inline-block hover:bg-white px-4 py-2 border-2 border-black rounded-lg font-semibold text-black hover:text-black hover:scale-110 transition transition-all duration-300">
                     Sign Up
                 </a>
                 <a
