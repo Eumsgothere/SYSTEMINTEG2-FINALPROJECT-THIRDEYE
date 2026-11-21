@@ -13,7 +13,7 @@
         </div>
 
         <!-- Navigation -->
-        <div class="flex items-center space-x-6">
+        <div class="flex items-center space-x-4">
 
             <a href="/" class="inline-block hover:text-[#FFB0B0] hover:scale-110 transition transition-all duration-300">
                 Home
@@ -48,27 +48,27 @@
 
                 <?php if (session()->get('role') === 'admin'): ?>
 
-                    <a
-                        href="/admin/dashboard"
-                        class="inline-block hover:text-yellow-300 hover:scale-110 transition transition-all duration-300">
-                        Admin Dashboard
-                    </a>
+
                     <a
                         href="<?= base_url('/admin/suppliers') ?>"
-                        class="inline-block hover:text-yellow-300 hover:scale-110 transition-all duration-300">
+                        class="inline-block hover:text-[#FFB0B0] hover:scale-110 transition-all duration-300">
                         Suppliers
                     </a>
                     <a
                         href="<?= base_url('/admin/inventory') ?>"
-                        class="inline-block hover:text-yellow-300 hover:scale-110 transition transition-all duration-300">
+                        class="inline-block hover:text-[#FFB0B0] hover:scale-110 transition transition-all duration-300">
                         Inventory
                     </a>
                     <a
                         href="<?= base_url('admin/sales') ?>"
-                        class="inline-block hover:text-yellow-300 hover:scale-110 transition transition-all duration-300">
+                        class="inline-block hover:text-[#FFB0B0] hover:scale-110 transition transition-all duration-300">
                         Sales Report
                     </a>
-
+                    <a
+                        href="/admin/dashboard"
+                        class="inline-block bg-[#FFB0B0] hover:bg-white px-4 py-2 border-2 border-black rounded-lg font-semibold text-[#2b2620] hover:text-black hover:scale-110 transition transition-all duration-300">
+                        Admin Dashboard
+                    </a>
                 <?php endif; ?>
 
                 <a
@@ -81,7 +81,7 @@
 
                 <a
                     href="/signup"
-                    class="inline-block hover:bg-white px-4 py-2 border-2 border-black rounded-lg font-semibold text-black hover:text-black hover:scale-110 transition transition-all duration-300">
+                    class="inline-block bg-[#FFB0B0] hover:bg-white px-4 py-2 border-2 border-black rounded-lg font-semibold text-[#2b2620] hover:text-black hover:scale-110 transition transition-all duration-300">
                     Sign Up
                 </a>
                 <a

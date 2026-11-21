@@ -3,7 +3,7 @@
 
 <?= view('components/head', ['title' => 'My Orders']) ?>
 
-<body>
+<body class="bg-[#D6C3A2]">
     <?= view('components/header') ?>
 
     <main class="mx-auto px-6 py-10 container">
@@ -20,7 +20,7 @@
 
                 <a
                     href="<?= base_url('products') ?>"
-                    class="inline-block bg-blue-900 hover:bg-blue-800 mt-6 px-5 py-3 rounded-lg font-semibold text-white">
+                    class="inline-block inline-block bg-[#af1e1e] hover:bg-[#eb2525] mt-6 px-5 py-3 rounded-lg font-semibold text-white hover:scale-110 transition-all duration-300">
                     Browse Products
                 </a>
             </section>

@@ -3,7 +3,7 @@
 
 <?= view('components/head', ['title' => 'Add Supplier']) ?>
 
-<body class="bg-gray-100">
+<body class="bg-[#D6C3A2]">
 
     <?= view('components/header') ?>
 
@@ -110,7 +110,7 @@
                     <button
                         type="button"
                         onclick="removeProduct(this)"
-                        class="bg-red-600 hover:bg-red-700 px-4 rounded-lg text-white">
+                        class="inline-block bg-red-600 hover:bg-red-700 px-4 rounded-lg text-white hover:scale-110 transition-all duration-300">
                         Remove
                     </button>
 
@@ -121,7 +121,7 @@
             <button
                 type="button"
                 onclick="addProduct()"
-                class="bg-green-600 hover:bg-green-700 mb-6 px-4 py-2 rounded-lg text-white">
+                class="inline-block bg-green-600 hover:bg-green-700 mb-6 px-4 py-2 rounded-lg text-white hover:scale-110 transition-all duration-300">
                 + Add Another Product
             </button>
 
@@ -130,13 +130,13 @@
 
                 <a
                     href="<?= base_url('admin/suppliers') ?>"
-                    class="bg-gray-300 hover:bg-gray-400 px-5 py-3 rounded-lg">
+                    class="inline-block bg-gray-300 hover:bg-gray-400 px-5 py-3 rounded-lg hover:scale-110 transition-all duration-300">
                     Cancel
                 </a>
 
                 <button
                     type="submit"
-                    class="bg-blue-900 hover:bg-blue-800 px-5 py-3 rounded-lg text-white">
+                    class="inline-block bg-[#af1e1e] hover:bg-[#eb2525] px-5 py-3 rounded-lg text-white hover:scale-110 transition-all duration-300">
                     Save Supplier
                 </button>
 
